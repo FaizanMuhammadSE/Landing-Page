@@ -1,0 +1,150 @@
+/* Global Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.7rem;
+}
+h3 {
+  font-size: 2.4rem;
+}
+h4 {
+  font-size: 2rem;
+}
+h5 {
+  font-size: 1.8rem;
+}
+
+p,
+a {
+  font-size: 2rem;
+}
+
+/* Landing Page */
+#landing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+#main {
+  background-color: rgb(152, 220, 214);
+  border-top-right-radius: 1rem;
+  flex: 2 1 75rem;
+}
+#about {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#about * {
+  padding: 0.5rem;
+}
+/* Profile Image */
+#image-box {
+  background-color: white;
+  flex: 1 1 40rem;
+  position: relative;
+  min-height: 40vh; /* So it maintain height when it get flex-wrapped */
+}
+#image-box img {
+  position: absolute;
+  top: 30%;
+  left: -35%;
+  height: 350px;
+  width: 350px;
+  object-fit: cover;
+  box-shadow: 0 10px 10px rgb(103, 98, 98), 0 20px 20px rgb(79, 125, 119);
+  border-radius: 40rem;
+}
+#image-box img:hover {
+  animation: rotateToInitial 1s linear forwards,
+    rotateImg 2s linear infinite alternate 1s;
+}
+
+/* Nav Section */
+nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  min-height: 10vh;
+  background-color: rgb(22, 133, 123);
+  box-shadow: 0 3px 10px rgb(12, 98, 98);
+  border-top-right-radius: 1rem;
+}
+nav h1 {
+  flex: 1 1 40rem;
+  font-family: "Butterfly Kids", cursive;
+  font-weight: bolder;
+  font-style: normal;
+  text-align: center;
+  font-size: 4rem;
+  padding: 1rem;
+}
+nav ul {
+  flex: 1 1 40rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+nav ul li {
+  flex: 1 1 10rem;
+  padding: 0.5rem 0rem;
+}
+nav a {
+  color: black;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1164px) {
+  #image-box img {
+    top: -50%;
+    /* Horizontally centered image */
+    left: 0%;
+    right: 0%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 370px) {
+  #image-box img {
+    width: 80%;
+    border-radius: 2rem;
+  }
+}
+/* Key Frames */
+@keyframes rotateToInitial {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(5deg);
+  }
+}
+@keyframes rotateImg {
+  0% {
+    transform: rotateZ(5deg);
+  }
+  100% {
+    transform: rotateZ(-5deg);
+  }
+}
